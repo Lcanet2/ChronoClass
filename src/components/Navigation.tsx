@@ -28,7 +28,7 @@ export function Navigation({ user, activeView, onViewChange }: NavigationProps) 
 
   return (
     <nav className="bg-white shadow-sm border-b border-slate-200">
-      <div className="container mx-auto px-4">
+      <div className="px-6">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
             <div className="flex items-center space-x-2">

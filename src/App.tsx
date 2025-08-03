@@ -38,13 +38,13 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 w-100">
       <Navigation 
         user={currentUser} 
         activeView={activeView} 
         onViewChange={setActiveView} 
       />
-      <main className="container mx-auto px-4 py-8">
+      <main className="px-8 py-8 w-full max-w-none">
         {renderActiveView()}
       </main>
       <Toaster />

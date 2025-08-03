@@ -156,10 +156,10 @@ export function TeacherInterface({ user }: TeacherInterfaceProps) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
-            <div className="min-w-full">
+          <div className="overflow-x-auto -mx-6">
+            <div className="min-w-max px-6">
               {/* Header */}
-              <div className="grid grid-cols-[200px,repeat(20,80px)] gap-1 mb-2">
+              <div className="grid grid-cols-[250px,repeat(20,100px)] gap-2 mb-3">
                 <div className="p-3 bg-slate-100 rounded-lg font-semibold text-sm">
                   Activités
                 </div>
@@ -184,7 +184,7 @@ export function TeacherInterface({ user }: TeacherInterfaceProps) {
               {activityTypes.map((activity) => {
                 const Icon = activity.icon;
                 return (
-                  <div key={activity.key} className="grid grid-cols-[200px,repeat(20,80px)] gap-1 mb-1">
+                  <div key={activity.key} className="grid grid-cols-[250px,repeat(20,100px)] gap-2 mb-2">
                     <div className={`p-3 rounded-lg flex items-center space-x-2 ${activity.bgColor}`}>
                       <Icon className={`h-4 w-4 ${activity.color}`} />
                       <span className="text-sm font-medium">{activity.label}</span>
@@ -215,7 +215,7 @@ export function TeacherInterface({ user }: TeacherInterfaceProps) {
               })}
 
               {/* Total Row */}
-              <div className="grid grid-cols-[200px,repeat(20,80px)] gap-1 mt-4 pt-2 border-t">
+              <div className="grid grid-cols-[250px,repeat(20,100px)] gap-2 mt-4 pt-2 border-t">
                 <div className="p-3 bg-slate-800 text-white rounded-lg font-semibold text-sm">
                   Total
                 </div>

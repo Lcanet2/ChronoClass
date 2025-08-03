@@ -84,7 +84,7 @@ export function Dashboard({ user }: DashboardProps) {
   ];
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 w-full max-w-none">
       <div className="flex flex-col space-y-2">
         <h1 className="text-3xl font-bold text-slate-900">
           Bonjour {user.role === 'interim' ? 'Profil Intérimaire' : user.name.split(' ')[0]} 👋
@@ -95,7 +95,7 @@ export function Dashboard({ user }: DashboardProps) {
       </div>
 
       {/* Current Week Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8 w-full">
         <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-blue-900">
@@ -166,7 +166,7 @@ export function Dashboard({ user }: DashboardProps) {
       </div>
 
       {/* Activity Breakdown */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 w-full">
         <Card>
           <CardHeader>
             <CardTitle>Répartition des Activités</CardTitle>
@@ -174,19 +174,19 @@ export function Dashboard({ user }: DashboardProps) {
               Heures par domaine d'activité cette semaine
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-6">
             {activityTypes.map((activity) => {
               const Icon = activity.icon;
               const hours = weeklyStats[activity.key];
               return (
                 <div key={activity.key} className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className={`p-2 rounded-lg ${activity.color}`}>
+                    <div className={`p-3 rounded-lg ${activity.color}`}>
                       <Icon className="h-4 w-4 text-white" />
                     </div>
-                    <span className="font-medium">{activity.label}</span>
+                    <span className="font-medium text-base">{activity.label}</span>
                   </div>
-                  <Badge variant="secondary" className="bg-slate-100">
+                  <Badge variant="secondary" className="bg-slate-100 text-base px-3 py-1">
                     {hours}h
                   </Badge>
                 </div>
@@ -202,7 +202,7 @@ export function Dashboard({ user }: DashboardProps) {
               Avancement vers vos objectifs annuels
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-8">
             {activityTypes.map((activity) => {
               const current = yearlyProgress[activity.key];
               const goal = yearlyGoals[activity.key];
@@ -210,18 +210,18 @@ export function Dashboard({ user }: DashboardProps) {
               const Icon = activity.icon;
               
               return (
-                <div key={activity.key} className="space-y-2">
+                <div key={activity.key} className="space-y-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                      <Icon className="h-4 w-4 text-slate-600" />
-                      <span className="text-sm font-medium">{activity.label}</span>
+                      <Icon className="h-5 w-5 text-slate-600" />
+                      <span className="text-base font-medium">{activity.label}</span>
                     </div>
-                    <span className="text-sm text-slate-600">
+                    <span className="text-base text-slate-600">
                       {current}h / {goal}h
                     </span>
                   </div>
-                  <Progress value={percentage} className="h-2" />
-                  <div className="text-xs text-slate-500 text-right">
+                  <Progress value={percentage} className="h-3" />
+                  <div className="text-sm text-slate-500 text-right">
                     {percentage}% complété
                   </div>
                 </div>
