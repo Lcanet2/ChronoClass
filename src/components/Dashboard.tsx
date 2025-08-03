@@ -166,7 +166,7 @@ export function Dashboard({ user }: DashboardProps) {
       </div>
 
       {/* Activity Breakdown */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
         <Card>
           <CardHeader>
             <CardTitle>Répartition des Activités</CardTitle>

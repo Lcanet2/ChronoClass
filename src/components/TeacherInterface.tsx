@@ -156,8 +156,39 @@ export function TeacherInterface({ user }: TeacherInterfaceProps) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto -mx-6">
-            <div className="min-w-max px-6">
+          {/* CORRECTION: Container avec padding et margin pour espacer le scroll */}
+          <div 
+            className="overflow-x-auto pb-8 mb-4" 
+            style={{
+              /* Personnalisation de la scrollbar */
+              scrollbarWidth: 'thin',
+              scrollbarColor: '#cbd5e1 #f1f5f9'
+            }}
+          >
+            <style jsx>{`
+              /* Webkit browsers (Chrome, Safari, Edge) */
+              div::-webkit-scrollbar {
+                height: 8px;
+                margin-top: 16px;
+              }
+              
+              div::-webkit-scrollbar-track {
+                background: #f1f5f9;
+                border-radius: 4px;
+                margin-top: 16px;
+              }
+              
+              div::-webkit-scrollbar-thumb {
+                background: #cbd5e1;
+                border-radius: 4px;
+              }
+              
+              div::-webkit-scrollbar-thumb:hover {
+                background: #94a3b8;
+              }
+            `}</style>
+            
+            <div className="min-w-max">
               {/* Header */}
               <div className="grid grid-cols-[250px,repeat(20,100px)] gap-2 mb-3">
                 <div className="p-3 bg-slate-100 rounded-lg font-semibold text-sm">

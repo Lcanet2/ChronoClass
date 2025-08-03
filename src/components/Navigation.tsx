@@ -27,31 +27,39 @@ export function Navigation({ user, activeView, onViewChange }: NavigationProps) 
   };
 
   return (
-    <nav className="bg-white shadow-sm border-b border-slate-200">
-      <div className="px-6">
+    <nav className="bg-slate-800 shadow-lg border-b border-slate-600 w-full">
+      <div className="w-full px-6">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
             <div className="flex items-center space-x-2">
-              <GraduationCap className="h-8 w-8 text-blue-600" />
-              <h1 className="text-xl font-bold text-slate-900">ChronoClasse</h1>
+              <GraduationCap className="h-8 w-8 text-blue-400" />
+              <h1 className="text-xl font-bold text-white">ChronoClasse</h1>
             </div>
             
             <div className="hidden md:flex items-center space-x-1">
               <Button
-                variant={activeView === 'dashboard' ? 'default' : 'ghost'}
+                variant="ghost"
                 size="sm"
                 onClick={() => onViewChange('dashboard')}
-                className="flex items-center space-x-2"
+                className={`flex items-center space-x-2 text-white ${
+                  activeView === 'dashboard' 
+                    ? 'bg-white/20 hover:bg-white/30' 
+                    : 'hover:bg-white/10'
+                }`}
               >
                 <BarChart3 className="h-4 w-4" />
                 <span>Tableau de bord</span>
               </Button>
               
               <Button
-                variant={activeView === 'timesheet' ? 'default' : 'ghost'}
+                variant="ghost"
                 size="sm"
                 onClick={() => onViewChange('timesheet')}
-                className="flex items-center space-x-2"
+                className={`flex items-center space-x-2 text-white ${
+                  activeView === 'timesheet' 
+                    ? 'bg-white/20 hover:bg-white/30' 
+                    : 'hover:bg-white/10'
+                }`}
               >
                 <Clock className="h-4 w-4" />
                 <span>Saisie des heures</span>
@@ -59,10 +67,14 @@ export function Navigation({ user, activeView, onViewChange }: NavigationProps) 
               
               {user.role === 'admin' && (
                 <Button
-                  variant={activeView === 'admin' ? 'default' : 'ghost'}
+                  variant="ghost"
                   size="sm"
                   onClick={() => onViewChange('admin')}
-                  className="flex items-center space-x-2"
+                  className={`flex items-center space-x-2 text-white ${
+                    activeView === 'admin' 
+                      ? 'bg-white/20 hover:bg-white/30' 
+                      : 'hover:bg-white/10'
+                  }`}
                 >
                   <Users className="h-4 w-4" />
                   <span>Administration</span>
@@ -73,10 +85,10 @@ export function Navigation({ user, activeView, onViewChange }: NavigationProps) 
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="flex items-center space-x-2 p-2">
+              <Button variant="ghost" className="flex items-center space-x-2 p-2 text-white hover:bg-white/10">
                 <Avatar className="h-8 w-8">
                   <AvatarImage src="" />
-                  <AvatarFallback className="bg-blue-100 text-blue-700">
+                  <AvatarFallback className="bg-blue-600 text-white">
                     {getInitials(user.name)}
                   </AvatarFallback>
                 </Avatar>
