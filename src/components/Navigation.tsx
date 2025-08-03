@@ -33,7 +33,7 @@ export function Navigation({ user, activeView, onViewChange }: NavigationProps) 
           <div className="flex items-center space-x-8">
             <div className="flex items-center space-x-2">
               <GraduationCap className="h-8 w-8 text-blue-400" />
-              <h1 className="text-xl font-bold text-white">ChronoClasse</h1>
+              <h1 className="text-xl font-bold text-white">ChronoClass</h1>
             </div>
             
             <div className="hidden md:flex items-center space-x-1">
