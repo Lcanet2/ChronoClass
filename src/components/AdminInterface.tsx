@@ -35,7 +35,7 @@ interface TeacherSummary {
   status: 'complete' | 'incomplete' | 'overdue';
 }
 
-export function AdminInterface({ user }: AdminInterfaceProps) {
+export function AdminInterface({  }: AdminInterfaceProps) {
   const currentWeek = 42;
   
   // Mock data for teachers

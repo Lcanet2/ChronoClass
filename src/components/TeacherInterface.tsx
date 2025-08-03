@@ -35,7 +35,7 @@ interface WeeklyHours {
   };
 }
 
-export function TeacherInterface({ user }: TeacherInterfaceProps) {
+export function TeacherInterface({  }: TeacherInterfaceProps) {
   const currentWeek = 42;
   
   const [weeklyHours, setWeeklyHours] = useState<WeeklyHours>({
@@ -165,28 +165,29 @@ export function TeacherInterface({ user }: TeacherInterfaceProps) {
               scrollbarColor: '#cbd5e1 #f1f5f9'
             }}
           >
-            <style jsx>{`
-              /* Webkit browsers (Chrome, Safari, Edge) */
-              div::-webkit-scrollbar {
-                height: 8px;
-                margin-top: 16px;
-              }
-              
-              div::-webkit-scrollbar-track {
-                background: #f1f5f9;
-                border-radius: 4px;
-                margin-top: 16px;
-              }
-              
-              div::-webkit-scrollbar-thumb {
-                background: #cbd5e1;
-                border-radius: 4px;
-              }
-              
-              div::-webkit-scrollbar-thumb:hover {
-                background: #94a3b8;
-              }
-            `}</style>
+<style dangerouslySetInnerHTML={{
+  __html: `
+    .scroll-container::-webkit-scrollbar {
+      height: 8px;
+      margin-top: 16px;
+    }
+    
+    .scroll-container::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 4px;
+      margin-top: 16px;
+    }
+    
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    
+    .scroll-container::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  `
+}} />
             
             <div className="min-w-max">
               {/* Header */}
